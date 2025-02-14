@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Fondo en tonos de amarillo */
+        body {
+            background: linear-gradient(to right, #FFD700, #FFEA00, #FFF176);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        section {
+            background-color: #FFF8DC; /* Fondo de tarjeta */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            color: #DAA520; /* Amarillo dorado */
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #B8860B; /* Amarillo oscuro */
+            margin-top: 10px;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            background-color: #FFECB3; /* Amarillo suave */
+            color: #8B8000;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #FFD700; /* Amarillo brillante */
+            border: none;
+            border-radius: 5px;
+            color: #8B8000;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FFC107; /* Amarillo dorado más oscuro */
+        }
+
+        p {
+            margin-top: 15px;
+            color: #8B8000;
+        }
+
+        a {
+            color: #DAA520;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label>Mail</label>
+            <input type="email" placeholder="..." id="email" required autofocus>
+            <label>Contraseña</label>
+            <input type="password" placeholder="..." id="password" required>
+            <input type="submit" value="Ingresar">
+        </form>
+        <p>No tienes una cuenta? <a href="signup.html">Registro</a></p>
+    </section>
+    <script src="js/login.js"></script>
+</body>
+</html>
