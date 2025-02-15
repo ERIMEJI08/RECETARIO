@@ -83,6 +83,14 @@
     </style>
 </head>
 <body>
+    <!-- Verificar si el usuario ya está logueado -->
+    <script>
+        // Verificamos si hay una sesión activa
+        if (localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'index.html'; // Si está logueado, redirigimos a la página principal
+        }
+    </script>
+
     <section>
         <h2>Login</h2>
         <form id="loginForm">
@@ -94,6 +102,29 @@
         </form>
         <p>No tienes una cuenta? <a href="signup.html">Registro</a></p>
     </section>
-    <script src="js/login.js"></script>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obtener los valores del formulario
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Recuperar los datos del usuario guardados en localStorage
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            // Comprobar si las credenciales son correctas
+            if (user && user.email === email && user.password === password) {
+                // Guardar el estado de la sesión en localStorage
+                localStorage.setItem('isLoggedIn', 'true');
+                // Redirigir al usuario a la página principal
+                window.location.href = 'index.html';
+            } else {
+                alert('Credenciales incorrectas');
+            }
+        });
+    </script>
+
 </body>
 </html>
